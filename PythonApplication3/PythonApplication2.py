@@ -1,0 +1,12 @@
+#-*- coding:cp1251 -*-
+from string import punctuation
+ 
+text = '''Ќапишите программу, котора€ принимает текст и выводит два слова: 
+наиболее часто встречающеес€ и самое длинное. 
+Ќапишите пожалуйста решение на Python'''
+ 
+tbl = str.maketrans('', '', punctuation)
+words = text.translate(tbl).lower().split()
+print(max(words, key=len))
+print(max(set(words), key=lambda x: words.count(x)))
+
